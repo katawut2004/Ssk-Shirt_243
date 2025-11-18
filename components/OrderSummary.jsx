@@ -1,16 +1,24 @@
+// OrderSummary.jsx (ส่วนที่แก้ไข)
+
 'use client';
 import React, { useState } from 'react';
 
-export default function OrderSummary({ product, selectedStyle }) {
+// เพิ่ม onCheckout เข้ามาใน props
+export default function OrderSummary({ product, selectedStyle, onCheckout }) {
   const [activeTab, setActiveTab] = useState(1);
 
   const styles = product.styles;
-  const currentStyle = styles.find(s => s.id === selectedStyle);
+  // currentStyle ไม่ได้ใช้ในส่วนนี้แล้ว แต่ยังคงไว้หากส่วนอื่นใช้
+  const currentStyle = styles.find(s => s.id === selectedStyle); 
 
   return (
     <div className="mb-6">
+      {/* ... ส่วนแสดงผล Order Summary เดิม ... */}
+
       {/* เลือกลิขสิทธิ์ */}
       <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden mb-4">
+        {/* ... ส่วน Tabs และ Tab Content เหมือนเดิม ... */}
+        
         <h3 className="text-lg font-bold bg-purple-500 text-white px-4 py-3">
           ลิงค์การซื้อเสื้อ
         </h3>
@@ -54,8 +62,10 @@ export default function OrderSummary({ product, selectedStyle }) {
         </div>
       </div>
 
-      {/* ปุ่มสั่งซื้อ */}
-      <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+      {/* ปุ่มสั่งซื้อ (เรียกใช้ onCheckout) */}
+      <button 
+        onClick={onCheckout} // <--- เรียกใช้ prop onCheckout
+        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg">
         เข้าสู่ระบบเพื่อซื้อเสื้อ
       </button>
     </div>
