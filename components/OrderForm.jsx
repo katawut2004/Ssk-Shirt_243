@@ -1,11 +1,11 @@
-// components/OrderForm.jsx
 'use client';
 import React, { useState } from 'react';
 
 // รายการไซส์เสื้อทั้งหมด
 const SIZES = ['SSS', 'SS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL', '6XL', '7XL', '8XL', '9XL', '10XL'];
 
-export default function OrderForm({ styles, onBackToSummary }) {
+// เพิ่ม onProceedToPayment ใน props
+export default function OrderForm({ styles, onBackToSummary, onProceedToPayment }) {
   // State สำหรับเก็บข้อมูลฟอร์ม
   const [formData, setFormData] = useState({
     fullName: '',
@@ -28,10 +28,10 @@ export default function OrderForm({ styles, onBackToSummary }) {
   // จัดการเมื่อกด "ถัดไปเพื่อชำระเงิน"
   const handleSubmit = (e) => {
     e.preventDefault();
-    // ในสถานการณ์จริง: ส่งข้อมูลไปที่ API / ไปหน้าชำระเงิน
-    console.log('ข้อมูลที่ต้องการชำระเงิน:', formData);
-    alert('ดำเนินการต่อไปยังหน้าชำระเงิน...'); 
-    // ถ้าใช้ Next.js Router: router.push('/checkout');
+    // ในสถานการณ์จริง: ส่งข้อมูลการสั่งซื้อไปเก็บในเซิร์ฟเวอร์
+    
+    // เรียกฟังก์ชันเพื่อเปลี่ยนไปหน้าชำระเงิน
+    onProceedToPayment(); 
   };
 
   return (
@@ -101,7 +101,7 @@ export default function OrderForm({ styles, onBackToSummary }) {
           </button>
           
           <button
-            type="submit"
+            type="submit" // ใช้ type="submit" เพื่อเรียก handleSubmit ซึ่งจะเรียก onProceedToPayment
             className="flex-1 bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg"
           >
             ถัดไปเพื่อชำระเงิน →

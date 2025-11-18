@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'เสื้อเฉลิมฉลองเมือง 243 ปี | ศรีสะเกษ',
-  description: 'เสื้อเฉลิมฉลองเมืองศรีสะเกษ 243 ปี',
+  title: 'เสื้อSISAKET ROBOTICS | ศรีสะเกษ',
+  description: 'SISAKET ROBOTICS',
 };
 
 export default function RootLayout({ children }) {

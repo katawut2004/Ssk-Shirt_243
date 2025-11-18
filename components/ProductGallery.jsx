@@ -8,9 +8,9 @@ export default function ProductGallery() {
 
   // 2. ใช้ Path สตริงที่อ้างอิงถึง /public/images/ โดยตรง
   const images = [
-    '/images/shirt2.jpg',
-    '/images/shirt3.jpg',
-    '/images/shirt1.jpg'
+    '/images/shirt2.png',
+    '/images/shirt3.png',
+    '/images/shirt1.png'
   ];
 
   return (

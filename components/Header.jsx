@@ -11,7 +11,7 @@ export default function Header() {
           </div>
           <div>
             <h1 className="text-lg font-bold text-gray-800">ศรีสะเกษ</h1>
-            <p className="text-xs text-gray-600">SISAKET CHARITY</p>
+            <p className="text-xs text-gray-600">SISAKET ROBOTICS</p>
           </div>
         </div>
 

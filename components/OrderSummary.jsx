@@ -20,7 +20,7 @@ export default function OrderSummary({ product, selectedStyle, onCheckout }) {
         {/* ... ส่วน Tabs และ Tab Content เหมือนเดิม ... */}
         
         <h3 className="text-lg font-bold bg-purple-500 text-white px-4 py-3">
-          ลิงค์การซื้อเสื้อ
+          ประวัติการขายเสื้อ
         </h3>
         
         {/* Tabs */}
@@ -66,7 +66,7 @@ export default function OrderSummary({ product, selectedStyle, onCheckout }) {
       <button 
         onClick={onCheckout} // <--- เรียกใช้ prop onCheckout
         className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg">
-        เข้าสู่ระบบเพื่อซื้อเสื้อ
+        คลิกเพื่อซื้อเสื้อ
       </button>
     </div>
   );
